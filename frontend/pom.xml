@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Usage:
+  mvn clean install -P tycho-build,-default-repo
+  Also see tycho-N-TASK.sh scripts.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>ch.sbb.zld.frontend</artifactId>
+  <packaging>pom</packaging>
+
+  <parent>
+    <groupId>ch.sbb.zld</groupId>
+    <artifactId>zld</artifactId>
+    <version>4.1.10</version>
+  </parent>
+
+  <!-- These properties are not in the parent pom, as they only concern tycho 
+    and the target platform version is only parsed from here by the build scripts. -->
+  <properties>
+    <!-- tycho client build version -->
+    <tycho.version>1.4.0</tycho.version>
+    <!-- ZLD target platform version -->
+    <zld.target.version>1.471.33</zld.target.version>
+  </properties>
+
+  <profiles>
+    <profile>
+      <id>tycho-build</id>
+      <!-- this repository is hidden from eclipse by moving it to a profile 
+        to avoid error in pom parsing in eclipse. -->
+      <repositories>
+        <repository>
+          <id>zld-target</id>
+          <url>http://p2-repository.tms.rd/p2/eclipse-rcp/1.471.33/</url>
+          <layout>p2</layout>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-compiler-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <compilerArgument>-warn:none</compilerArgument>
+          <compilerArgument>-err:none</compilerArgument>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <!-- Build only windows 64 bit application -->
+          <environments>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+          </environments>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <modules>
+    <module>plugins</module>
+    <module>ch.sbb.zld.remote.product</module>
+    <module>ch.sbb.zld.standalone.product</module>
+  </modules>
+</project>
