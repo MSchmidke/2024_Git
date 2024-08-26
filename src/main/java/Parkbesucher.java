@@ -28,6 +28,16 @@ public class Parkbesucher {
     return hatTicket;
   }
 
+  public void fahreAttraktion(final Attraktion attraktion) {
+    if (hatTicket && groesse >= attraktion.getMindestgröße()) {
+      System.out.println(name + " fährt " + attraktion.getName());
+      attraktion.starteFart();
+    }
+    else {
+      System.out.println(name + " darf " + attraktion.getName() + " nicht fahren.");
+    }
+  }
+
   @Override
   public String toString() {
     return "Parkbesucher{" + "name='" + name + '\'' + ", alter=" + alter + ", größe=" + groesse + ", hatTicket=" + hatTicket + '}';
