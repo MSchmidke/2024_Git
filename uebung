@@ -1,0 +1,23 @@
+if [ -f .git/REBASE_HEAD ]; then
+  git rebase --abort
+fi
+
+git checkout -f main
+git reset --hard
+git clean -fd
+git for-each-ref '**/uebung_*' --format="%(refname)" | xargs -i git update-ref -d {}
+
+if [ "$1" = "stop" ]; then
+  exit 0;
+fi
+
+a=$1
+
+sub() {
+  git log -1 $1 | grep -o '$t/'${a}'.*' | sed 's|$t/|uebung_|' | xargs -i git tag {} $1
+  git log -1 $1 | grep -o '$b/'${a}'.*' | sed 's|$b/|uebung_|' | xargs -i git branch {} $1
+}
+
+for s in `git log $(git for-each-ref --format="%(objectname)" '**/origin/*') --grep "\$./${a}" --format="%h"`; do sub $s; done
+
+git checkout uebung_$a

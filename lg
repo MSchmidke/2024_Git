@@ -1,0 +1,1 @@
+git log `git for-each-ref --format="%(refname)" '**/ue*'` --graph
