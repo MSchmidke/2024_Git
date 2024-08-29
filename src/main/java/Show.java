@@ -2,10 +2,12 @@ public class Show {
 
   private final String titel;
   private final String ort;
+  private final String zeit; // z.B. "15:00 Uhr"
 
-  public Show(final String titel, final String ort) {
+  public Show(final String titel, final String ort, final String zeit) {
     this.titel = titel;
     this.ort = ort;
+    this.zeit = zeit;
   }
 
   public String getTitel() {
@@ -16,8 +18,12 @@ public class Show {
     return ort;
   }
 
+  public String getZeit() {
+    return zeit;
+  }
+
   @Override
   public String toString() {
-    return "Show " + titel + " findet im " + ort + " statt.";
+    return "Show " + titel + " findet im " + ort + " um " + zeit + " statt.";
   }
 }
