@@ -8,6 +8,9 @@ public class Beispielpark {
         new Parkbesucher("Tim", 22, 175, true)//
         , new Parkbesucher("Anna", 28, 160, true)//
         , new Parkbesucher("Leon", 35, 185, false)//
+        , new Parkbesucher("Ben", 41, 177, true)//
+        , new Parkbesucher("Lisa", 30, 164, false)//
+        , new Parkbesucher("Ole", 19, 173, true)//
     );
     System.out.println(park);
     System.out.println(besucher);
