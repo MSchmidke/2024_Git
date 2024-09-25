@@ -21,26 +21,8 @@
     and the target platform version is only parsed from here by the build scripts. -->
 	<properties>
 		<!-- tycho client build version -->
-		<tycho.version>1.4.0</tycho.version>
-		<!-- ZLD target platform version -->
-		<zld.target.version>1.471.33</zld.target.version>
+		<tycho.version>2.7.5</tycho.version>
 	</properties>
-
-	<profiles>
-		<profile>
-			<id>tycho-build</id>
-			<!-- this repository is hidden from eclipse by moving it to a profile 
-        to avoid error in pom parsing in eclipse. -->
-			<repositories>
-				<repository>
-					<id>zld-target</id>
-					<url>http://p2-repository.tms.rd/p2/eclipse-rcp/1.471.33/</url>
-					<layout>p2</layout>
-				</repository>
-			</repositories>
-		</profile>
-	</profiles>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -52,14 +34,25 @@
 					<compilerArgument>-err:none</compilerArgument>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-publisher-plugin</artifactId>
+				<version>${tycho.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<compress>false</compress>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho.version}</version>
 				<extensions>true</extensions>
 			</plugin>
-
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
@@ -73,14 +66,26 @@
 							<arch>x86_64</arch>
 						</environment>
 					</environments>
+					<target>
+						<!-- 
+				   It would also be possible to use <file> instead of <artifact> to directly put the file name of the target platform file
+				   This way one would get rid of the necessity to create a dummy Maven project around the platform file.
+				   BUT I didn't find out how to put a relative file name since this pom is used as parent pom from different locations
+				   - the current dir has different values. Didn't know how to get around this.
+				-->
+						<artifact>
+							<groupId>ch.sbb.zld</groupId>
+							<artifactId>ch.sbb.zld.gui.targetplatform</artifactId>
+							<version>4.1.10</version>
+						</artifact>
+					</target>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
-
 	<modules>
 		<module>plugins</module>
+		<module>ch.sbb.zld.gui.targetplatform</module>
 		<module>ch.sbb.zld.remote.product</module>
 	</modules>
 </project>
