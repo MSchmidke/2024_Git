@@ -16,7 +16,7 @@
   <parent>
     <groupId>ch.sbb.zld</groupId>
     <artifactId>zld</artifactId>
-    <version>4.1.10</version>
+    <version>4.3.1</version>
   </parent>
 
   <!-- These properties are not in the parent pom, as they only concern tycho 
