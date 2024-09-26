@@ -1,3 +1,4 @@
+package de.schmidke.uebungen;
 public class Mitarbeiter {
 
   private final String name;

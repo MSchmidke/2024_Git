@@ -1,3 +1,4 @@
+package de.schmidke.uebungen;
 public class Parkbesucher {
 
   private final String name;

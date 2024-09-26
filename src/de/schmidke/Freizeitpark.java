@@ -1,3 +1,4 @@
+package de.schmidke.uebungen;
 public class Freizeitpark {
 
   private final String name;

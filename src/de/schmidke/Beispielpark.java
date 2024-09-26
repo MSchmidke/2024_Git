@@ -1,3 +1,4 @@
+package de.schmidke.uebungen;
 public class Beispielpark {
 
   public static void main(final String[] args) {
