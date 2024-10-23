@@ -1,0 +1,6 @@
+Rebase den aktuellen Branch (uebung_17) auf uebung_17_main.
+
+Was will es von mir? Was ist passiert?
+
+
+git rebase uebung_17_main
