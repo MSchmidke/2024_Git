@@ -1,0 +1,3 @@
+Entferne den Commit "Teil 2" (uebung_10_b) aus der Historie.
+
+git rebase -i abzweig
