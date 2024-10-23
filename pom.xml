@@ -5,7 +5,7 @@
 
 	<groupId>de.mtrail.marcus.git</groupId>
 	<artifactId>uebungen</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 
 	<properties>
 		<maven.compiler.release>21</maven.compiler.release>
@@ -16,6 +16,12 @@
 			<artifactId>lombok</artifactId>
 			<version>1.18.34</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.11.3</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>
