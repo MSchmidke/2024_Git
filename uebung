@@ -5,7 +5,7 @@ fi
 git checkout -f main
 git reset --hard
 git clean -fd
-git for-each-ref '**/uebung_*' --format="%(refname)" | xargs -i git update-ref -d {}
+for q in `git for-each-ref '**/uebung_*' --format="%(refname)"`; do git update-ref -d ${q}; done
 
 if [ "$1" = "stop" ]; then
   exit 0;
@@ -14,8 +14,8 @@ fi
 a=$1
 
 sub() {
-  git log -1 $1 | grep -o '$t/'${a}'.*' | sed 's|$t/|uebung_|' | xargs -i git tag {} $1
-  git log -1 $1 | grep -o '$b/'${a}'.*' | sed 's|$b/|uebung_|' | xargs -i git branch {} $1
+  for q in `git log -1 $1 | grep -o '$t/'${a}'.*' | sed 's|$t/|uebung_|'`; do git tag ${q} $1; done
+  for q in `git log -1 $1 | grep -o '$b/'${a}'.*' | sed 's|$b/|uebung_|'`; do git branch ${q} $1; done
 }
 
 for s in `git log $(git for-each-ref --format="%(objectname)" '**/origin/*') --grep "\$./${a}" --format="%h"`; do sub $s; done
