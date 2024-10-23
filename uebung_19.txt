@@ -1,0 +1,6 @@
+Gleichermaßen selten wie verwirrend
+
+Rebase den Branch (uebung_19) auf „main“ (uebung_19_main). 
+Was bedeutet die Meldung, und wie macht man weiter?
+
+git rebase uebung_19_main
