@@ -1,0 +1,5 @@
+Rebase den Branch (uebung_36) auf „main“ (uebung_36_main). 
+
+Endlich keine Konflikte! Oder?
+
+git rebase uebung_36_main
