@@ -11,6 +11,10 @@ public class Beispielpark {
     park.fügeAttraktionHinzu(new Attraktion("Mystery Castle", "Drop Tower", 130, 20));
     park.fügeAttraktionHinzu(new Attraktion("Crazy Bats", "VR-Achterbahn", 100, 18));
     park.fügeAttraktionHinzu(new Attraktion("Wakobato", "Wasserfahrt", 0, 30));
+    park.fügeAttraktionHinzu(new Attraktion("Winja's Fear", "Achterbahn", 120, 30));
+    park.fügeAttraktionHinzu(new Attraktion("Winja's Force", "Achterbahn", 120, 30));
+    park.fügeAttraktionHinzu(new Attraktion("F.L.Y.", "Achterbahn", 130, 30));
+    park.fügeAttraktionHinzu(new Attraktion("Talocan", "Suspended Top Spin", 140, 30));
     System.out.println(park);
     var familie = List.of(//
         new Parkbesucher("Hans Müller", 45, 180, true), //
