@@ -1,0 +1,22 @@
+Nutze einen interaktiven Rebase, um folgende Änderungen durchzuführen:
+
+* Die Änderungen aus Commit uebung_09_a „Setter hinzufügen“ sollen komplett 
+  ungeschehen gemacht werden.
+* In Commit uebung_09_b „Füge Attraktion hinzu“ wurde in der neuen Klasse 
+  Attraktion der Name der Methode starteFahrt falsch geschrieben. Korrigiere
+  das direkt in diesem Commit.
+* Die Änderungen aus Commit uebung_09_d „Weitere Familienmitglieder“ passen 
+  noch gut mit in den Commit uebung_09_c „Füge Familie hinzu“. Kombiniere 
+  beide.
+* Beseitige den Tippfehler im Commit-Kommentar uebung_09_e „Beispiele für 
+  Attraktionen“. 
+* Der Commit uebung_09_f „Show: Füge Ort hinzu“ enthält Änderungen, die ganz 
+  offensichtlich nichts mit dem Thema des Commits zu tun haben. Mache zwei 
+  Commits daraus.
+* Die Klasse „Attraktion“ soll gleich bei der Neuanlage einen Klassenkommentar 
+  erhalten. Wie kann das am einfachsten nachgetragen werden?
+* Mittlerweile gibt es drei Commits, in denen die Klasse „Beispielpark“ 
+  bearbeitet wird. Füge sie zu einem zusammen.
+
+
+git rebase -i abzweig
