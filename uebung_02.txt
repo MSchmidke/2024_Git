@@ -1,0 +1,31 @@
+Einen Commit ungeschehen machen mit Revert
+
+Der Commit "Mitarbeiter: Setter hinzufügen" (uebung_02_t) war 
+eine Fehlentwicklung nd soll wieder entfernt werden.
+
+Variante 1: mittels Revert
+
+git revert uebung_02_t
+
+Vergleiche anschließend die Diffs:
+
+1) Vorwärts-Diff des Revert-Commits
+
+ git diff uebung_02_w uebung_02
+
+2) "Falschrumer" Diff des ursprünglichen Commits:
+
+  git diff uebung_02_t uebung_02_b
+  
+
+Variante 2: mittels interaktivem Rebase
+
+  git checkout uebung_02_2
+  git rebase -i uebung_02_b
+  
+
+Vergleiche das Ergebnis der beiden Varianten. Erinnerung:
+Branch "uebung_02" wurde per revert bearbeitet, Branch
+"uebung_02_2" per Rebase.
+
+  git diff uebung_02 uebung 02_2
