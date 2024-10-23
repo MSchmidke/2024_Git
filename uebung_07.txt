@@ -1,0 +1,4 @@
+Der aktuelle Branch (uebung_07) soll künftig auf dem Commit uebung_07_w
+aufsetzen.
+
+git rebase uebung_07_w
