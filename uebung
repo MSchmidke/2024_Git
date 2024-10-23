@@ -4,7 +4,7 @@ fi
 
 git checkout -f main
 git reset --hard
-git clean -fd
+git clean -fdx
 for q in `git for-each-ref '**/uebung_*' --format="%(refname)"`; do git update-ref -d ${q}; done
 
 if [ "$1" = "stop" ]; then
@@ -21,3 +21,16 @@ sub() {
 for s in `git log $(git for-each-ref --format="%(objectname)" '**/origin/*') --grep "\$./${a}" --format="%h"`; do sub $s; done
 
 git checkout uebung_$a
+
+echo
+echo
+echo ===========================================================
+echo =============== Übung $a ==================================
+echo ===========================================================
+
+
+eval `dirname "$0"`/lg
+echo
+echo ============== Die Aufgabe ================================
+
+git show origin/aufgabentexte:uebung_$a.txt
