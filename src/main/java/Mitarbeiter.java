@@ -1,8 +1,8 @@
 public class Mitarbeiter {
 
-  private final String name;
-  private final Rolle rolle;
-  private final int schichtdauer; // in Stunden
+  private String name;
+  private Rolle rolle;
+  private int schichtdauer; // in Stunden
 
   public Mitarbeiter(final String name, final Rolle rolle, final int schichtdauer) {
     this.name = name;
@@ -20,6 +20,18 @@ public class Mitarbeiter {
 
   public int getSchichtdauer() {
     return schichtdauer;
+  }
+
+  public void setName(final String name) {
+    this.name = name;
+  }
+
+  public void setRolle(final Rolle rolle) {
+    this.rolle = rolle;
+  }
+
+  public void setSchichtdauer(final int schichtdauer) {
+    this.schichtdauer = schichtdauer;
   }
 
   @Override
