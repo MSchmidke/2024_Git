@@ -1,0 +1,9 @@
+Einen Commit auf mehrere Aufteilen
+
+Im Commit "Erstelle Test für Mitarbeiter" (uebung_41_t) wurden
+an der pom.xml versehentlich zwei verschiedene Änderungen vorgenommen.
+Die zweite Änderung (neue Versionsnummer) soll in einem separaten Commit
+geschehen, und dieser Commit soll auch auf einem separaten Branch
+liegen.
+
+git rebase -i uebung_41_t^
