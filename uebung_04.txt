@@ -1,0 +1,6 @@
+Der Commit 'Show: Füge Zeit hinzu' (Tag uebung_04_t) soll auf den
+aktuellen Branch gepickt werden. Was passiert? Warum?
+
+git cherry-pick uebung_04_t
+git diff uebung_04_b uebung_04_w -- *Show.java
+
