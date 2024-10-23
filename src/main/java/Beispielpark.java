@@ -11,6 +11,9 @@ public class Beispielpark {
         , new Parkbesucher("Ben", 41, 177, true)//
         , new Parkbesucher("Lisa", 30, 164, false)//
         , new Parkbesucher("Ole", 19, 173, true)//
+        , new Parkbesucher("Lukas", 43, 186, false)//
+        , new Parkbesucher("Elena", 29, 165, true)//
+        , new Parkbesucher("Jakob", 24, 179, true)//
     );
     System.out.println(park);
     System.out.println(besucher);
