@@ -2,7 +2,7 @@ public class Ticket {
 
   private final String typ;
   private final double preis;
-  private final boolean gültig;
+  private boolean gültig;
 
   public Ticket(final String typ, final double preis, final boolean gültig) {
     this.typ = typ;
@@ -23,4 +23,13 @@ public class Ticket {
     return gültig;
   }
 
+  public void entwerteTicket() {
+    if (gültig) {
+      gültig = false;
+      System.out.println("Das " + typ + " Ticket wurde entwertet.");
+    }
+    else {
+      System.out.println("Das Ticket ist bereits entwertet.");
+    }
+  }
 }
