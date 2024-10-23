@@ -1,0 +1,7 @@
+Rebase den Branch (uebung_18) auf „main“ (uebung_18_main). 
+Aber Achtung: jemand hat die betroffene Datei reformatiert. 
+Dieses "Rauschen" soll in den finalen Commits nicht enthalten 
+sein, nur die wirklichen Änderungen!
+
+
+git rebase uebung_18_main
