@@ -1,0 +1,11 @@
+Der Commit 'Füge eine Besucherfamilie hinzu' aus dem Branch uebung_01_branch
+soll auf den aktuellen Branch übernommen werden. Der fragliche Commit ist mit
+dem Tag 'uebung_01_t' markiert.
+
+git cherry-pick uebung_01_t
+
+Prüfe nach der Übernahme das Ergebnis:
+
+lg
+git diff uebung_01_b uebung_01_t
+git diff uebung_01_w uebung_01
