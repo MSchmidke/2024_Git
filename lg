@@ -1,1 +1,1 @@
-git --no-pager log `git for-each-ref --format="%(refname)" '**/ue*'` --graph --pretty=short --author-date-order --decorate-refs='refs/heads/uebung*' --decorate-refs='refs/tags/uebung*'
+git --no-pager log `git for-each-ref --format="%(refname)" '**/ue*'` --graph --pretty=short --author-date-order --decorate-refs='refs/heads/uebung*' --decorate-refs='refs/tags/uebung*' --decorate-refs="refs/remotes/origin/abzweig"
